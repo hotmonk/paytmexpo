@@ -5,7 +5,8 @@ import { Text, View, TouchableOpacity, Modal} from "react-native";
 
 export default class App extends React.Component {
   constructor(props) {
-    //this.webViewRef = null;
+    super(props);
+    this.webViewRef = null;
     this.state = {
       showModal: false,
       ack: "",
@@ -26,6 +27,7 @@ export default class App extends React.Component {
     onNavigationStateChange = (data) => {
       const { url } = data;
       this.setState({ currentUrl: url })
+      console.log(url);
       
       }
   render() {
